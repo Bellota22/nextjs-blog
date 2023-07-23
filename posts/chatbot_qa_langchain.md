@@ -8,7 +8,7 @@ date: '2023-07-23'
 ## Features
 
 - [Lang Chain](https://python.langchain.com/docs/get_started/introduction.html) Framework for developing applications powered by language models.
-- [Google Colab](https://colab.research.google.com/drive/1WJa5fPgZNQoW279QeOG0ssLV-HNaE0ur?usp=sharing) Playground
+- [Google Colab](https://colab.research.google.com/drive/1WJa5fPgZNQoW279QeOG0ssLV-HNaE0ur?usp=sharing)  Project in Google colab
 - [Qdrant](https://qdrant.tech/documentation/) Vector database to save our documents PDF
 - [OpenAI](https://platform.openai.com/docs/introduction) LLM used in this example, it can be others LLM but this one had better performance
 
