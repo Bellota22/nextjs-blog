@@ -50,3 +50,33 @@
   .lightText {
     color: #666;
   }
+
+  .projectCard {
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.1s ease-in;
+  }
+  .projectCard:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  .projectContent {
+    display: flex;
+    align-items: center;
+  }
+  .projectTitle {
+    font-size: 1.5em;
+    color: #0070f3;
+    cursor: pointer;
+  }
+  .projectImageContainer {
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+    margin-left: 15px;
+  }
+  .projectImage {
+    border-radius: 5px;
+    object-fit: cover;
+  }

@@ -1,10 +1,12 @@
 ---
 title: "Chat over documents PDF with OpenAI, Langchain and Qdrant"
 date: '2023-07-23'
+image: "/images/langchain.png"
 ---
-![Langchain image](https://raw.githubusercontent.com/Bellota22/chatbot_qa_langchain/master/images/langchain.png)
+![Langchain image](https://raw.githubusercontent.com/Bellota22/chatbot_qa_langchain/master/images/langchain.png)![Langchain image](https://raw.githubusercontent.com/Bellota22/chatbot_qa_langchain/master/images/langchain.png)
 
 [Git hub repository](https://github.com/Bellota22/chatbot_qa_langchain)
+
 ## Features
 
 - [Lang Chain](https://python.langchain.com/docs/get_started/introduction.html) Framework for developing applications powered by language models.
@@ -20,14 +22,12 @@ This project is aimed at building a question and answer (QA) chatbot. The proces
 
 * Install the necessary packages using the following command:
 
-
 ```
 !pip install PyPDF2 qdrant_client langchain openai tiktoken sentence_transformers
 
 ```
 
 * Import the required packages into your Python script:
-
 
 ```
 import os
@@ -66,10 +66,10 @@ from qdrant_client.http.models import Distance, VectorParams
 
 ## Step 1: Defining our database
 
-    * In this project,  we are using [Qdrant](https://qdrant.tech/) as our vectorial database
+    * In this project,  we are using[Qdrant](https://qdrant.tech/) as our vectorial database
 
-    After creating an account, the first step is to create a new cluster. You can use different 
-    configurations for your cluster. For this example, we will use the free tier cluster and name 
+    After creating an account, the first step is to create a new cluster. You can use different
+    configurations for your cluster. For this example, we will use the free tier cluster and name
     it 'test'.
 
 ![Create Cluster image](https://raw.githubusercontent.com/Bellota22/chatbot_qa_langchain/master/images/create_cluster.png)
@@ -87,8 +87,9 @@ client_db = QdrantClient(
 
 return client_db
 ```
-    To initialize our client we need to pass it an URL provided by our Qdrant cluster in this case 
-    
+
+    To initialize our client we need to pass it an URL provided by our Qdrant cluster in this case
+
 ```
 
 def create_collection(client_db, collection_name, size_length_stored):
@@ -101,14 +102,13 @@ def create_collection(client_db, collection_name, size_length_stored):
 ```
 
     To create our collection we will need:
-        * client_db : Qdrant's client as an object, 
+        * client_db : Qdrant's client as an object,
         * collection_name: Name our collection will have
         * size_length_stored: This depend in the embedding model that you will use.
             ex: HuggingFace 768, OpenAI 1536. More info https://huggingface.co/spaces/mteb/leaderboard
 
-
-    * Then, once we are setted up, lets start uploading our data! 
-    The data that we will use as example is a scholarship rulebook from Universidad privada del Norte 
+    * Then, once we are setted up, lets start uploading our data!
+    The data that we will use as example is a scholarship rulebook from Universidad privada del Norte
 
     In order to do this we need to initialize our vectorstore object:
 
@@ -123,14 +123,15 @@ def get_vectorstore(client_db, collection_name, embeddings):
     )
     return vectorstore
 ```
+
     This function depends on:
-    * embeddings: Embedding model to vectorize our information in this case we are 
+    * embeddings: Embedding model to vectorize our information in this case we are
     gonna use Hugging face embed model
     * client_db
     * collection_name
 
-
     In this function we simplified our process to save data into our database
+
 ```
 def save_vector_data(path_pdf, vectorstore):
 
@@ -163,8 +164,8 @@ def pdf_to_text(pdf_direction):
 
     return text
 ```
-    First we need to extract the data from the pdf using PyPDF2 library
 
+    First we need to extract the data from the pdf using PyPDF2 library
 
 ```
 
@@ -179,18 +180,19 @@ def get_chunks_from_long_text(text):
     chunks = text_splitter.split_text(text)
     return chunks
 ```
+
     After we  get the text for the pdf document, we need to split it in chunks of
     1000 with a little overlap to not lose information, we supports in Langchain framework
 
-    We can check our data stored in Qdrant dashboard for this go to your cluster, and select dashboard 
-    Another tab will ask you your Qdrant apikey and you will see your collection 
+    We can check our data stored in Qdrant dashboard for this go to your cluster, and select dashboard
+    Another tab will ask you your Qdrant apikey and you will see your collection
     with the information of the data
-
 
 ## Step 2: Querying
 
     Once we prepared our data we are gonna connect our OpenAI with our database model
     then we are gonna querying over the docs we uploaded
+
 ```
 def query_to_db(query, user, llm, vectorstore):
 
@@ -201,12 +203,11 @@ def query_to_db(query, user, llm, vectorstore):
 ```
 
     In this function we can split it into the template we use to querying the LLM
-    We want to get the user question and information, and answer based on the documents 
+    We want to get the user question and information, and answer based on the documents
     and de information provided. In this case we are gonna input the user question and
     get a util information for this example
 
 ![Langchain image](https://raw.githubusercontent.com/Bellota22/chatbot_qa_langchain/master/images/info_storaged.png)
-
 
 ```
 user_1 ={
@@ -235,7 +236,6 @@ def query_template(query, user):
     query_final = prompt_template.format(query=query,user=user)
     return query_final
 ```
-
 
     Finally when we get our enriched query, we can connect our LLM with langchain and our Qdrant
     database, with this we can ask question over the documents we uploaded and give good anwsers
@@ -278,7 +278,7 @@ def main():
     llm= OpenAI()
 
 
-    
+  
     vectorstore =vectorstore_save_data(url_db, collection_name, size_length_stored, embedding, path_pdf)
 
     response = query_to_db(query, user_1, llm, vectorstore)
@@ -318,18 +318,20 @@ emitido por el establecimiento de salud del Ministerio de Salud (MINSA)
  With this we completed our Chatbot, it can answer question over documents that we uploaded in our Qdrant database, we can ask specific questions based on the user information
 
     In this project we are using:
+
 * Qdrant database as vector database
 * Langchain to manage our chatbot and connection with Qdrant and OpenAI
 * OpenAI as LLM
 * HuggingFace model to transform our documents into vectors
 
-    With this tools we can answer question based on documents we uploaded before, as well 
-    we can manage our chatbot with Langchain
+  With this tools we can answer question based on documents we uploaded before, as well
+  we can manage our chatbot with Langchain
 
-    In next steps we can make our chatbot more complex by adding an interface using Next.js
+  In next steps we can make our chatbot more complex by adding an interface using Next.js
 
-We hope you can make your chatbot even better with this steps and start a new 
+We hope you can make your chatbot even better with this steps and start a new
 journey in the AI World!
 
 ## Acknowledgment
+
 This project was constructed in adherence to the best practices outlined in Robert Martin's book, "Clean Code," making it efficient, maintainable, and easily understood by other programmers.

@@ -1,25 +1,19 @@
 ---
 title: "Leaf's company Financial Automatic Reporting"
 date: '2023-07-07'
+image: "/images/0dashboard.png"
 ---
-
   ![Leaf dashboard](https://raw.githubusercontent.com/Bellota22/Leaf-s-company-Financial-Automatic-Reporting/master/images/0dashboard.png)
-      
 
-- [Repository of the project](https://github.com/Bellota22/Leaf-s-company-Financial-Automatic-Reporting)  
-
-
+- [Repository of the project](https://github.com/Bellota22/Leaf-s-company-Financial-Automatic-Reporting)
 
 ## Features
 
-- [Google Sheets](https://developers.google.com/sheets?hl=es-419)  
-
+- [Google Sheets](https://developers.google.com/sheets?hl=es-419)
 
 ## Context
 
- 
 Leafbnb is a community marketplace that allows for the advertising and booking of affordable accommodations in over 190 countries via the internet or your smartphone. This company generates revenue through commissions charged to landlords. As a data analyst will i've created an automated financial report with the main metrics for the business team.
-
 
 ## Project dataset
 
@@ -36,19 +30,21 @@ Leafbnb is a community marketplace that allows for the advertising and booking o
 - **Revenue (€)**: Gross revenue earned by Leafbnb after paying the landlords.
 - **Discounts & Subsidies (€)**: Discounts and subsidies offered by Leafbnb on their platform.
 
-
 ## Development | Execution
+
 The final project report will consist of the following:
 
 🏠 Automatic Financial Reporting for Leafbnb
+
 - Start of Weekly Report
 - Summary of the Latest Week
-    - Sales: €160,501
-    - Nights Sold: €24,532
-    - Increase in Nights: 3.59%
-    - Gross Margin: 15.31%
+  - Sales: €160,501
+  - Nights Sold: €24,532
+  - Increase in Nights: 3.59%
+  - Gross Margin: 15.31%
 
 ### Table of Contents
+
 - Tab 1: Current Weekly Data
 - Tab 2: Forecast
 - Tab 3: Competitors
@@ -56,11 +52,12 @@ The final project report will consist of the following:
 
 [Click here to access the final report on Google Sheets](https://docs.google.com/spreadsheets/d/1tzMxlm-_oCkt4URwFPMtYKFz1cWMyM3zbe6IP2qxWf0/edit#gid=1576199802)
 
-
 ## Conclusions
+
 Summary of Results: This section provides a concise summary of the most relevant insights from the data analysis. It highlights significant patterns, trends, or insights that have been discovered.
 
 Thank you for your attention to this Leaf Project!
+
 ## Authors
 
 - Gabriel Villanueva ([@GabrielAngelVi7](https://twitter.com/GabrielAngelVi7))
