@@ -3,8 +3,8 @@ title: "Chat over documents PDF with OpenAI, Langchain and Qdrant"
 date: '2023-07-23'
 image: "/images/langchain.png"
 ---
-![Langchain image](https://raw.githubusercontent.com/Bellota22/chatbot_qa_langchain/master/images/langchain.png)![Langchain image](https://raw.githubusercontent.com/Bellota22/chatbot_qa_langchain/master/images/langchain.png)
 
+![Langchain image](https://raw.githubusercontent.com/Bellota22/chatbot_qa_langchain/master/images/langchain.png)
 [Git hub repository](https://github.com/Bellota22/chatbot_qa_langchain)
 
 ## Features
