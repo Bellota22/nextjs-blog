@@ -3,7 +3,7 @@ title: "Leaf's company Financial Automatic Reporting"
 date: '2023-07-07'
 ---
 
-  ![Aquí la descripción de la imagen por si no carga](https://raw.githubusercontent.com/Bellota22/Leaf-s-company-Financial-Automatic-Reporting/master/images/0dashboard.png)
+  ![Leaf dashboard](https://raw.githubusercontent.com/Bellota22/Leaf-s-company-Financial-Automatic-Reporting/master/images/0dashboard.png)
       
 
 - [Repository of the project](https://github.com/Bellota22/Leaf-s-company-Financial-Automatic-Reporting)  
